@@ -26,17 +26,21 @@ func InsertionSort(a []int) {
 		key := a[i]
 		//make the comparison index one less than that of the current index
 		j := i - 1
+		fmt.Println("key index : ", i, "\tcomp index: ", j)
 		/*
 			Check to see if the comparison index is still within bonds
 			if so, then check to see if the comparison element is greater than the key element
+			this will echo throughout the entireity of the array until no longer valid
+			this loop causes the complexity to be of O( n^2 )
 		*/
 		for j >= 0 && a[j] > key {
+			fmt.Println("swap: ", j+1, " and ", j)
 			//swap the next element with the current comparison element
 			a[j+1] = a[j]
 			//decrement the comparison index
 			j = j - 1
 		}
-		//set the lower value key to
+		//assign the
 		a[j+1] = key
 		fmt.Println("Iteration#", i, " :", a)
 	}
